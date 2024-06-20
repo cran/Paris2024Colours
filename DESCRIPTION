@@ -1,7 +1,7 @@
 Package: Paris2024Colours
 Title: Color Palettes Inspired by Paris 2024 Olympic and Paralympic
         Games
-Version: 0.1.2
+Version: 0.2.0
 Authors@R: 
     person(given = "Maxime",
            family = "Kuntz",
@@ -18,9 +18,10 @@ URL: https://github.com/maximekuntz/Paris2024Colours,
 BugReports: https://github.com/maximekuntz/Paris2024Colours/issues
 Suggests: testthat (>= 3.0.0)
 Config/testthat/edition: 3
+Imports: ggplot2
 NeedsCompilation: no
-Packaged: 2024-04-16 10:18:45 UTC; mkuntz
+Packaged: 2024-06-20 20:55:07 UTC; maxim
 Author: Maxime Kuntz [aut, cre] (<https://orcid.org/0000-0002-2068-904X>)
 Maintainer: Maxime Kuntz <maxime.kuntz75@gmail.com>
 Repository: CRAN
-Date/Publication: 2024-04-16 20:50:07 UTC
+Date/Publication: 2024-06-20 21:10:02 UTC

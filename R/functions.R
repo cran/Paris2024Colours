@@ -1,13 +1,16 @@
 #' Paris 2024 palette generator
 #'
 #' @param name Name of the colour palette. Options are \code{Logo},
-#' \code{OlympicRings}, \code{GamesLook}.
+#' \code{OlympicRings}, \code{GamesLook}, \code{Generation2024},
+#' \code{Impact2024}, \code{TerreDeJeux}, \code{Tickets} and \code{Flame}.
 #' @param n Number of colours in the palette. Palettes have 2 to 5 colours that
 #' can be used as a discrete palette. To use more, use a continuous palette.
 #' @param type Usage of palette as "continuous" or "discrete". Continuous usage
 #' interpolates between colors to create a scale of values. If omitted, function
 #' assumes continuous if n > length of palette, and discrete if n < length of
 #' palette.
+#' @param reverse Whether to reverse colour palette (TRUE) or not (FALSE,
+#' default).
 #'
 #' @return A vector of colours.
 #' @export
@@ -16,7 +19,9 @@
 #' paris2024_palette("GamesLook", n = 6, type = "continuous")
 #' paris2024_palette("Logo", 2)
 #' paris2024_palette("OlympicRings")
-paris2024_palette <- function(name, n, type = c("discrete", "continuous")) {
+#' paris2024_palette("OlympicRings", reverse = TRUE)
+paris2024_palette <- function(
+    name, n, type = c("discrete", "continuous"), reverse = FALSE) {
   pal <- paris2024_palettes[[name]]
 
   if (is.null(pal)) {
@@ -35,6 +40,10 @@ paris2024_palette <- function(name, n, type = c("discrete", "continuous")) {
 
   if (type == "discrete" && n > length(pal)) {
     stop("Number of requested colors greater than what palette can offer")
+  }
+
+  if (reverse) {
+    pal <- rev(pal)
   }
 
   out <- switch(type,
